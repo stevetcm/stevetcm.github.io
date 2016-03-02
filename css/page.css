@@ -8,43 +8,10 @@ body {
 	padding: 0px;
 }
 
-ul {
-	position: fixed;
-	top: 0;
-  	left: 0;
-  	z-index: 9999;
-  	width: 100%;
-	list-style-type: none;
-	margin: 0;
-    padding: 0;
-    background-color: #333;
-}
-
-li {
-    float: left;
-}
-
-li a {
-	display: block;
-    color: white;
-    text-align: center;
-    padding: 10px 16px;
-    text-decoration: none;
-    background-color: #333;
-}
-
-li a:hover {
-    background-color: #111;
-}
-
 .heading {
  	text-align: center;
  	text-transform: uppercase;
  	font-size: 35px;
-}
-
-#introduction {
-	padding-top: 43px;
 }
 
 #section_introdution {
@@ -53,10 +20,6 @@ li a:hover {
 	margin-left: auto;
   	margin-right: auto;
   	text-align: justify;
-}
-
-#projects {
-	padding-top: 18px;
 }
 
 h2 {
@@ -88,10 +51,6 @@ h3 {
 .project_image {
 	margin: 0px 45px 0px 0px;
 	float:left;
-}
-
-#contact {
-	padding-top: 30px;
 }
 
 #contact_image {
