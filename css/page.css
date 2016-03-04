@@ -6,7 +6,11 @@ body {
 }
 
 #nav-bar {
-	font-size: 25px;
+	display: block;
+}
+
+#menu1, #menu2, #menu3, #menu4 {
+	display: none;
 }
 
 ul {
@@ -36,6 +40,10 @@ li a {
 
 li a:hover {
     	background-color: #111;
+}
+
+hr {
+	width: 65%;
 }
 
 .heading {
@@ -104,4 +112,19 @@ h3 {
 
 .select_image {
 	margin: 0px 30px 30px 30px;
+}
+
+/* Mobile Responsiveness(Galaxy S4) */
+@media only screen and (device-width: 360px) {
+	#nav-bar {
+		display: none;
+	}
+
+	#menu1 {
+		display: block;
+	}
+	
+	li {
+		width: 100%;
+	}
 }
