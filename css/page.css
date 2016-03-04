@@ -116,6 +116,10 @@ h3 {
 
 /* Mobile Responsiveness(Galaxy S4) */
 @media only screen and (device-width: 360px) {
+	#small-nav-bar {
+		font-size: 30px;
+	}
+	
 	#nav-bar {
 		display: none;
 	}
