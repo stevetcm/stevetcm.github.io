@@ -1,9 +1,15 @@
 window.onload = function() { 
-  var nav = document.getElementById("small-nav-bar");
+  var nav = document.getElementById("nav-bar");
+  var small_nav = document.getElementById("small-nav-bar");
   var elem1 = document.getElementById('introduction');
   var elem2 = document.getElementById('projects');
-
-  var height = nav.offsetHeight+5;
+  var height = 0;
+  
+  if (small_nav != 0) {
+    height = small_nav.offsetHeight+5;
+  } else {
+    height = nav.offsetHeight+5;
+  }
 
   elem1.style.paddingTop = height + "px"
   elem2.style.paddingTop = height + "px"
