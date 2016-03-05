@@ -116,16 +116,40 @@ h3 {
 
 /* Mobile Responsiveness(Galaxy S4) */
 @media only screen and (device-width: 360px) {
-	#small-nav-bar {
-		font-size: 30px;
-	}
-	
 	#nav-bar {
 		display: none;
+	}
+	
+	#small-nav-bar {
+		font-size: 40px;
 	}
 
 	#menu1 {
 		display: block;
+	}
+	
+	body {
+		font-size: 25px;
+	}
+	
+	.heading {
+		font-size: 45px;
+	}
+	
+	h3 {
+		display: block;
+		width: 420px;
+		margin: 30px auto 0 auto;
+	}
+
+	.hidden_image{
+		display: block;
+		width: 420px;
+		margin: 10px auto 0px auto;
+	}
+
+	.displays {
+		display: none;
 	}
 	
 	li {
