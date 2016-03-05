@@ -114,28 +114,20 @@ h3 {
 	margin: 0px 30px 30px 30px;
 }
 
-/* Mobile Responsiveness(Samsung Galaxy S4) */
-@media only screen and (device-width: 360px) {
+/* Mobile Responsiveness */
+@media only screen and (max-device-width: 414px) {
 	#nav-bar {
 		display: none;
 	}
 	
-	#small-nav-bar {
-		font-size: 70px;
-	}
-
 	#menu1 {
 		display: block;
 	}
 	
-	body {
-		font-size: 35px;
+	#section_introdution {
+		max-width: 85%;
 	}
-	
-	.heading {
-		font-size: 55px;
-	}
-	
+
 	h3 {
 		display: block;
 		width: 85%;
@@ -157,7 +149,8 @@ h3 {
 	}
 	
 	.select_image {
-		width: 200px;
-		height: 200px;
+		width: 85px;
+		height: 85px;
+		margin: 0px 5px 0px 5px;
 	}
 }
