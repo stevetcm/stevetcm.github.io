@@ -121,7 +121,7 @@ h3 {
 	}
 	
 	#small-nav-bar {
-		font-size: 55px;
+		font-size: 70px;
 	}
 
 	#menu1 {
@@ -129,7 +129,7 @@ h3 {
 	}
 	
 	body {
-		font-size: 30px;
+		font-size: 35px;
 	}
 	
 	.heading {
@@ -138,13 +138,13 @@ h3 {
 	
 	h3 {
 		display: block;
-		width: 80%;
+		width: 85%;
 		margin: 30px auto 0 auto;
 	}
 
 	.hidden_image {
 		display: block;
-		width: 80%;
+		width: 85%;
 		margin: 10px auto 0px auto;
 	}
 
