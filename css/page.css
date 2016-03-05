@@ -157,6 +157,7 @@ h3 {
 	}
 	
 	.select_image {
-		width: 2em;
+		width: 200px;
+		height: 200px;
 	}
 }
