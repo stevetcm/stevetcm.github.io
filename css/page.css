@@ -114,7 +114,7 @@ h3 {
 	margin: 0px 30px 30px 30px;
 }
 
-/* Mobile Responsiveness(Galaxy S4) */
+/* Mobile Responsiveness(Samsung Galaxy S4) */
 @media only screen and (device-width: 360px) {
 	#nav-bar {
 		display: none;
@@ -138,13 +138,13 @@ h3 {
 	
 	h3 {
 		display: block;
-		width: 420px;
+		width: 80%;
 		margin: 30px auto 0 auto;
 	}
 
-	.hidden_image{
+	.hidden_image {
 		display: block;
-		width: 90%;
+		width: 80%;
 		margin: 10px auto 0px auto;
 	}
 
@@ -154,5 +154,9 @@ h3 {
 	
 	li {
 		width: 100%;
+	}
+	
+	.select_image {
+		width: 2em;
 	}
 }
