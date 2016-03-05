@@ -5,7 +5,7 @@ window.onload = function() {
   var elem2 = document.getElementById('projects');
   var height = 0;
   
-  if (small_nav != 0) {
+  if (small_nav.offsetHeight != 0) {
     height = small_nav.offsetHeight+5;
   } else {
     height = nav.offsetHeight+5;
