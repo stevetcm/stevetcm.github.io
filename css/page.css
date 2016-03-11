@@ -143,35 +143,6 @@ h3 {
 	}
 }
 
-/* Mobile Responsiveness (Large/Landscape) */
-@media only screen and (min-device-width: 415px) {
-	#nav-bar {
-		display: none;
-	}
-
-	#section_introdution {
-		max-width: 85%;
-	}	
-
-	#menu1 {
-		display: block;
-	}
-
-	h3 {
-		display: block;
-		width: 85%;
-		margin: 30px auto 0 auto;
-	}
-
-	.displays {
-		width: 85%;
-	}
-
-	li {
-		width: 100%;
-	}
-}
-
 /* Mobile Responsiveness (Small/Portrait) */
 @media only screen and (max-device-width: 414px) {
 	#nav-bar {
