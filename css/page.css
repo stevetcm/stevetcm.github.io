@@ -5,6 +5,10 @@ body {
 	padding: 0px;
 }
 
+a {
+	text-decoration: none;
+} 
+
 #nav-bar {
 	display: block;
 }
