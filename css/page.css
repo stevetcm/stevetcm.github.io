@@ -84,6 +84,7 @@ h3 {
 }
 
 .hidden_image{
+	box-shadow: 5px 5px 5px grey;
 	display: none;
 }
 
@@ -100,6 +101,7 @@ h3 {
 
 .project_image {
 	margin: 0px 45px 0px 0px;
+	box-shadow: 5px 5px 5px grey;
 	float:left;
 }
 
