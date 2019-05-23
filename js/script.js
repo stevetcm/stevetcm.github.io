@@ -1,5 +1,6 @@
 CSSPlugin.useSVGTransformAttr = true;
 
+/*
 var tl_options = {
 	repeat: 1,
   repeatDelay: 0,
@@ -27,6 +28,10 @@ var stagger_path_to = {
 };
 
 tl.staggerTo(path, 1.75, stagger_path_to);
+*/
+
+
+var path = '#name *';
 
 function shake() {
   var shake_options = {
@@ -45,6 +50,9 @@ function delayedShake(delay) {
   TweenMax.delayedCall(delay, shake);
 }
 
+delayedShake(1);
+
+/*
 $('#name').hover(
   function() {
     if (!tl.isActive()) {
@@ -53,6 +61,7 @@ $('#name').hover(
     }
   }
 );
+*/
 
 function getRandom(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -61,7 +70,7 @@ function getRandom(min, max) {
 
 var typed_options = {
   strings: [ "Hello and welcome to my personal website.",
-             "You can hover over my name to replay the animation.",
+             //"You can hover over my name to replay the animation.",
              "Scroll down to learn a bit more about me.^250" ],
   typeSpeed: 20,
   backSpeed: 15,
