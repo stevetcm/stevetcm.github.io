@@ -306,10 +306,10 @@ h1 {
 		margin: -4px;
 	}
     @keyframes clipMe {
-  		0%, 100% {clip: rect(0px, calc(8.01vw + 8px), 1px, 0px);}
-  		25% {clip: rect(0px, 1px, calc(8.01vw + 8px), 0px);}
-  		50% {clip: rect(calc(8.01vw + 7px), calc(8.01vw + 8px), calc(8.01vw + 8px), 0px);}
-  		75% {clip: rect(0px, calc(8.01vw + 8px), calc(8.01vw + 8px), calc(8.01vw + 7px));}
+  		0%, 100% {clip: rect(0px, calc(8.1vw + 8px), 1px, 0px);}
+  		25% {clip: rect(0px, 1px, calc(8.1vw + 8px), 0px);}
+  		50% {clip: rect(calc(8.1vw + 7px), calc(8.1vw + 8px), calc(8.1vw + 8px), 0px);}
+  		75% {clip: rect(0px, calc(8.1vw + 8px), calc(8.1vw + 8px), calc(8.1vw + 7px));}
 	}
 	#resume_icon {
 		width: 5.2vw;
