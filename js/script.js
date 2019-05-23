@@ -117,23 +117,3 @@ $('.skills-switch').click(function() {
     brackets_count = 3;
   }
 });
-
-$('.modal-container').click(function() {
-  $(this).fadeOut();
-})
-
-$('#project-impulse').click(function() {
-  $(this).closest("#section-projects").find("#impulse").fadeToggle();
-})
-
-$('#project-tvnext').click(function() {
-  $(this).closest("#section-projects").find("#tvnext").fadeToggle();
-})
-
-$('#project-quickremind').click(function() {
-  $(this).closest("#section-projects").find("#quickremind").fadeToggle();
-})
-
-$('#project-twoworlds').click(function() {
-  $(this).closest("#section-projects").find("#twoworlds").fadeToggle();
-})
