@@ -135,19 +135,19 @@ h1 {
   	background-size: contain;
   	transform: rotate(45deg);
 }
-#email_icon {
-	width: 39px;
-	height: 39px;
-	margin-left: 11px;
-	background-image: url('../images/email_white.png');
-  	background-size: contain;
-  	transform: rotate(45deg);
-}
 #github_icon {
 	width: 47px;
 	height: 47px;
 	margin-left: 7px;
 	background-image: url('../images/github_white.png');
+  	background-size: contain;
+  	transform: rotate(45deg);
+}
+#email_icon {
+	width: 39px;
+	height: 39px;
+	margin-left: 11px;
+	background-image: url('../images/email_white.png');
   	background-size: contain;
   	transform: rotate(45deg);
 }
@@ -316,14 +316,14 @@ h1 {
 		height: 5.2vw;
 		margin-left: 1.4vw;
 	}
-	#email_icon {
-		width: 5.2vw;
-		height: 5.2vw;
-		margin-left: 1.4vw;
-	}
 	#github_icon {
 		width: 6.5vw;
 		height: 6.5vw;
 		margin-left: 0.8vw;
+	}
+	#email_icon {
+		width: 5.2vw;
+		height: 5.2vw;
+		margin-left: 1.4vw;
 	}
 }
