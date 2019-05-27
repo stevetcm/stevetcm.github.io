@@ -327,3 +327,34 @@ h1 {
 		margin-left: 1.4vw;
 	}
 }
+@media only screen and (max-width : 360px) {
+	.button_div {
+	 	width: 30px;
+	  	height: 30px;
+	}
+	.button_div::before,
+	.button_div::after {
+		margin: -3px;
+	}
+    @keyframes clipMe {
+  		0%, 100% {clip: rect(0px, 36px, 1px, 0px);}
+  		25% {clip: rect(0px, 1px, 36px, 0px);}
+  		50% {clip: rect(35px, 36px, 36px, 0px);}
+  		75% {clip: rect(0px, 36px, 36px, 35px);}
+	}
+	#resume_icon {
+		width: 20px;
+		height: 20px;
+		margin-left: 5px;
+	}
+	#github_icon {
+		width: 24px;
+		height: 24px;
+		margin-left: 3px;
+	}
+	#email_icon {
+		width: 20px;
+		height: 20px;
+		margin-left: 5px;
+	}
+}
