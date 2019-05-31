@@ -223,7 +223,7 @@ h1 {
   	transition: all 0.3s;
 }
 .switch.clicked {
-  transform: translateX(6px);
+  	transform: translateX(6px);
 }
 
 
@@ -249,13 +249,47 @@ h1 {
 	width: 100%;
 }
 
+.project-item .gplay_btn {
+	background: #202020;
+	color: #ffffff;
+	border: solid 2px;
+	border-radius: 4px;
+}
+
+.project-item .gplay_btn img {
+    	width: 15px;
+    	height: 15px;
+
+	position: relative;
+  	transform: translateY(12%);
+
+  	padding-right: 4px;
+}
+
+.project-item .git_btn {
+	background: #202020;
+	color: #ffffff;
+	border: solid 2px;
+	border-radius: 4px;
+}
+
+.project-item .git_btn img {
+	width: 15px;
+	height: 15px;
+
+	position: relative;
+  	transform: translateY(11%);
+
+  	padding-right: 4px;
+}	
+
 
 /* Responsive Media Queries
 ---------------------------------*/
 @media only screen and (max-width : 1329px) {
 	#projects-container {
 		grid-template-columns: auto auto;
-    }
+    	}
 }
 
 @media only screen and (max-width : 812px) {
@@ -279,25 +313,25 @@ h1 {
 		width: 8vw;
 	}
 	#aboutme-container {
-        width: 100%;
-        display: block;
-    }
+        	width: 100%;
+        	display: block;
+    	}
 
-    #skill-container {
-        width: 100%;
-        display: block;
-        float: left;
-    }
+    	#skill-container {
+		width: 100%;
+		display: block;
+		float: left;
+    	}
 
-    #projects-container {
+    	#projects-container {
 		grid-template-columns: auto;
   		margin-bottom: 0;
-    }
-    .project-item {
+    	}
+    	.project-item {
   		margin: 15px 0px 0px 0px;
 	}
 
-    .button_div {
+    	.button_div {
 	 	width: 8vw;
 	  	height: 8vw;
 	}
@@ -305,7 +339,7 @@ h1 {
 	.button_div::after {
 		margin: -4px;
 	}
-    @keyframes clipMe {
+    	@keyframes clipMe {
   		0%, 100% {clip: rect(0px, calc(8.1vw + 8px), 1px, 0px);}
   		25% {clip: rect(0px, 1px, calc(8.1vw + 8px), 0px);}
   		50% {clip: rect(calc(8.1vw + 7px), calc(8.1vw + 8px), calc(8.1vw + 8px), 0px);}
@@ -336,7 +370,7 @@ h1 {
 	.button_div::after {
 		margin: -3px;
 	}
-    @keyframes clipMe {
+    	@keyframes clipMe {
   		0%, 100% {clip: rect(0px, 36px, 1px, 0px);}
   		25% {clip: rect(0px, 1px, 36px, 0px);}
   		50% {clip: rect(35px, 36px, 36px, 0px);}
