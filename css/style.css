@@ -255,6 +255,9 @@ h1 {
 	border: solid 2px;
 	border-radius: 4px;
 }
+.project-item .gplay_btn:hover {
+	background: #000000;
+}
 
 .project-item .gplay_btn img {
     	width: 15px;
@@ -271,6 +274,9 @@ h1 {
 	color: #ffffff;
 	border: solid 2px;
 	border-radius: 4px;
+}
+.project-item .git_btn:hover {
+	background: #000000;
 }
 
 .project-item .git_btn img {
