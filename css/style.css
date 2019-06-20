@@ -8,7 +8,11 @@
 	--project-title-size: 15px;
 	--project-content-size: 14px;
 
-	--project-line-height-size: 175%;
+	--project-line-height-size: 150%;
+	
+	--project-buttons-margin: 5px;
+	--project-button-border-size: 2px;
+	--project-button-padding: 2px 6px 2px 1px;
 
 	--margin-one: 25px;
 	--margin-two: 35px;
@@ -284,7 +288,7 @@ a {
 	top: 50%;
 	left: 50%;
 	width: 100%;
-	line-height: 150%;
+	line-height: var(--project-line-height-size);
 	transform: translate(-50%, -50%);
 	z-index: 201;
 	text-align: center;
@@ -322,9 +326,9 @@ a {
 .project-button-div {
 	display: inline-block;
 	color: #ffffff;
-	border: solid 2px;
+	border: solid var(--project-button-border-size);
 	border-radius: 4px;
-	padding: 2px 6px 2px 1px;
+	padding: var(--project-button-padding);
 }
 .project-button-div img {
 	width: 15px;
@@ -381,8 +385,14 @@ a {
 
 		--typewriter-size: 12px;
 
-		--project-title-size: 14px;
-		--project-content-size: 13px;
+		--project-title-size: 13px;
+		--project-content-size: 12px;
+		
+		--project-line-height-size: 120%;
+
+		--project-buttons-margin: 3px;
+		--project-button-border-size: 1px;
+		--project-button-padding: 1px 5px 1px 0px;
 
 		--margin-one: 10px;	
 		--margin-two: 20px;
@@ -401,8 +411,8 @@ a {
 
 		--typewriter-size: 10px;
 
-		--project-title-size: 13px;
-		--project-content-size: 12px;
+		--project-title-size: 12px;
+		--project-content-size: 11px;
 
 		--margin-one: 7px;	
 		--margin-two: 12px;
