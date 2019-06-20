@@ -12,6 +12,8 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oxygen+Mono">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bungee">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bungee+Hairline">
   </head>
 
   <body>
@@ -19,179 +21,261 @@
     <section>
       <div id="section-intro" class="black">
 
+        <canvas id="canvas-particles"></canvas>
+
         <div id="intro-element">
-          <div id="name_div">
-            <svg id="name" x="0px" y="0px" viewBox="0 0 797 82" xml:space="preserve" overflow="visible">
-              <path d="M217,481v.14l6.17,5.56,7.7-14.45-.85-.91a41.35,41.35,0,0,0-13.55,2.89,30.37,30.37,0,0,0-4.46,2.42l5,4.49Z" transform="translate(-199.4 -471.15)"/><path d="M267.7,514q-3.15-5.21-10.05-8.72c-.67-.35-1.41-.69-2.21-1L259,522l-3.56-17.8-.58-.24-17.18,16.43c3.34,1,5.64,2,6.84,3.12a7.86,7.86,0,0,1,2.47,3.84l22.6-9.35A21.29,21.29,0,0,0,267.7,514Z" transform="translate(-199.4 -471.15)"/><path d="M234.8,498.27a32.7,32.7,0,0,1-6.46-1.88l-13.83,8.31-.82,7.79a61,61,0,0,0,14.67,5.56l8.88-19.24Z" transform="translate(-199.4 -471.15)"/><path d="M237.24,498.81l-8.88,19.24c1.19.31,2.42.61,3.7.9,2.14.47,4,.95,5.62,1.44L254.86,504A115.55,115.55,0,0,0,237.24,498.81Z" transform="translate(-199.4 -471.15)"/><path d="M207.88,544.53c.09.1.18.21.28.31q6.53,6.52,21.84,7.53V539Z" transform="translate(-199.4 -471.15)"/><path d="M214,505l.51-.3L217,481.14l-5-4.49a21.49,21.49,0,0,0-6.13,6.07,20.68,20.68,0,0,0-3.51,11.47,19.24,19.24,0,0,0,6.87,15.2,27.44,27.44,0,0,0,4.46,3.1l.82-7.79Z" transform="translate(-199.4 -471.15)"/><path d="M265,541.79,253,525l12,16.79a24.19,24.19,0,0,0,1.66-2.22,25,25,0,0,0,4.19-14,22.88,22.88,0,0,0-1.25-7.61L247,527.35a6.41,6.41,0,0,1,.21,1.64,7.33,7.33,0,0,1-2.82,5.67,9.32,9.32,0,0,1-3.83,1.94l8.17,14.69a34.89,34.89,0,0,0,6.22-2A26.56,26.56,0,0,0,265,541.79Z" transform="translate(-199.4 -471.15)"/><path d="M222.55,523.73l-23.15,1.45a30.56,30.56,0,0,0,8.45,19.32l15.55-16.71A26.53,26.53,0,0,1,222.55,523.73Z" transform="translate(-199.4 -471.15)"/><path d="M268.26,494.62q-1.33-10.81-7.66-16.45l-5.16,17.2Z" transform="translate(-199.4 -471.15)"/><path d="M230,535.82a12,12,0,0,1-4.39-3.5,13.78,13.78,0,0,1-2.21-4.53L207.85,544.5l0,0L230,539Z" transform="translate(-199.4 -471.15)"/><path d="M241.48,488.23q2.94,2.41,3.84,7.73l10.12-.59,5.16-17.2a20.26,20.26,0,0,0-1.77-1.41,24.2,24.2,0,0,0-4-2.25l-20.52,11.33A11.68,11.68,0,0,1,241.48,488.23Z" transform="translate(-199.4 -471.15)"/><path d="M236.35,537.1a14.94,14.94,0,0,1-6.35-1.28v16.55c1.9.13,3.88.2,6,.2a57.74,57.74,0,0,0,12.74-1.28l-8.17-14.69A16.29,16.29,0,0,1,236.35,537.1Z" transform="translate(-199.4 -471.15)"/><path d="M223,487l.16-.3L217,481.14l-2.48,23.56,13.83-8.31a6.68,6.68,0,0,1-1.71-1,4.38,4.38,0,0,1-1.77-3.38,5.34,5.34,0,0,1,.88-3l-2.58-2.31Z" transform="translate(-199.4 -471.15)"/><path d="M231,472l-.14.25L240,482l-9.14-9.75-7.7,14.45,2.58,2.31a6.37,6.37,0,0,1,1.27-1.4q2.15-1.8,6.39-1.8c.32,0,.62,0,.93,0l20.52-11.33c-4.92-2.23-11.25-3.36-19-3.36q-3.07,0-5.81.19l.85.91Z" transform="translate(-199.4 -471.15)"/><polygon points="127.3 54.05 127.3 43.14 118.97 49.51 127.3 54.05"/><polygon points="102.96 61.75 102.96 69.54 117.72 80.08 117.91 80.08 127.3 69.72 127.3 65.44 106.71 58.89 102.96 61.75"/><polygon points="106.71 58.89 127.3 65.44 127.3 54.05 118.97 49.51 106.71 58.89"/><polygon points="106.6 58.85 106.71 58.89 118.97 49.51 102.96 40.78 102.96 61.75 106.71 58.89 106.6 58.85"/><polygon points="114.65 18.91 127.3 30.76 127.3 20.79 127.58 20.79 125.6 10.85 127.58 20.79 151.51 20.79 132.6 5.85 151.51 20.79 152.11 20.79 152.11 1.34 138.25 1.34 114.65 18.91"/><path d="M302.37,498.75v13.18l16,8.73,8.33-6.37V501.9l-12.64-11.85ZM312,517l4-25Z" transform="translate(-199.4 -471.15)"/><polygon points="127.3 80.08 127.3 69.72 117.91 80.08 127.3 80.08"/><polygon points="78.15 20.79 85.98 20.79 78.15 11.97 78.15 20.79"/><polygon points="102.96 80.08 117.72 80.08 102.96 69.54 102.96 80.08"/><polygon points="114.6 18.85 114.65 18.91 138.25 1.34 112.25 1.34 118.6 15.85 112.25 1.34 104.64 1.34 99.73 13.2 102.57 20.79 102.96 20.79 102.96 27.61 114.65 18.91 114.6 18.85"/><path d="M299,484l.13.35L304,472.49H277.55v10.63l7.83,8.81H296l3.14-7.58Zm3-7-20,11Z" transform="translate(-199.4 -471.15)"/><polygon points="96.59 20.79 102.57 20.79 99.73 13.2 96.59 20.79"/><polygon points="187.45 58.12 187.45 48.63 163.07 39.2 163.07 50.2 177.51 70.73 187.45 58.12"/><polygon points="163.07 50.2 163.07 80.08 170.15 80.08 177.51 70.73 163.07 50.2"/><polygon points="213.36 46.73 222 30.67 203.04 30.67 201.19 46.73 213.36 46.73"/><polygon points="187.45 46.73 201.19 46.73 203.04 30.67 187.74 30.67 180.6 45.85 187.74 30.67 187.45 30.67 187.45 25.26 163.07 29.01 163.07 39.2 187.45 48.63 187.45 46.73"/><polygon points="219 62.25 213.72 80.08 226.33 80.08 229.45 75.09 229.45 62.25 219 62.25"/><polygon points="198.6 75.85 198.85 75.73 191.84 62.25 187.45 62.25 187.45 58.12 177.51 70.73 177.6 70.85 177.51 70.73 170.15 80.08 201.12 80.08 198.85 75.73 198.6 75.85"/><polygon points="191.84 62.25 198.85 75.73 217.6 66.85 198.85 75.73 201.12 80.08 213.72 80.08 219 62.25 191.84 62.25"/><polygon points="225.32 46.73 225.32 30.67 222 30.67 213.36 46.73 225.32 46.73"/><polygon points="163.07 1.34 163.07 12.94 173.61 1.34 163.07 1.34"/><polygon points="229.45 80.08 229.45 75.09 226.33 80.08 229.45 80.08"/><polygon points="228.27 18.15 228.27 9.01 218.43 18.15 228.27 18.15"/><polygon points="218.43 18.15 228.27 9.01 228.27 1.34 203.59 1.34 212.56 18.15 218.43 18.15"/><polygon points="187.45 18.15 190.28 18.15 193.4 1.34 173.61 1.34 163.07 12.94 163.07 29.01 187.45 25.26 187.45 18.15"/><polygon points="212.56 18.15 203.59 1.34 193.4 1.34 190.28 18.15 212.56 18.15"/><polygon points="301.6 8.85 301.48 8.9 314.37 16.96 320.17 1.34 295.48 1.34 294.49 4.54 301.48 8.9 301.6 8.85"/><polygon points="294.49 4.54 291.93 12.84 301.48 8.9 294.49 4.54"/><polygon points="285.27 34.41 280.93 48.45 298.29 60.28 302.37 49.28 293.71 31.08 285.27 34.41"/><polygon points="277.98 58.01 274.24 46.04 259.3 66.16 264.56 80.08 272.24 80.08 278.53 76.51 274.65 57.1 265.6 57.85 274.65 57.1 274.6 56.85 274.65 57.1 277.6 56.85 274.65 57.1 278.53 76.51 295.93 66.64 298.29 60.28 280.93 48.45 277.98 58.01"/><polygon points="293.6 30.85 293.71 31.08 311.77 23.97 314.37 16.96 301.48 8.9 291.93 12.84 285.27 34.41 293.71 31.08 293.6 30.85"/><polygon points="293.71 31.08 302.37 49.28 311.77 23.97 293.71 31.08"/><polygon points="272.28 39.77 263.43 11.47 256.6 35.85 272.28 39.77"/><polygon points="260.26 1.34 234.82 1.34 236.84 6.67 258.6 10.85 236.84 6.67 244.6 27.22 262.03 7 260.26 1.34"/><polygon points="278.6 76.85 278.53 76.51 272.24 80.08 290.93 80.08 295.93 66.64 278.53 76.51 278.6 76.85"/><polygon points="272.28 39.77 256.6 35.85 246.95 33.44 259.3 66.16 274.24 46.04 272.28 39.77"/><polygon points="263.43 11.47 262.03 7 244.6 27.22 246.95 33.44 256.6 35.85 263.43 11.47"/><polygon points="373.73 46.73 384.68 30.67 357.51 30.67 365.54 46.73 373.73 46.73"/><polygon points="394.45 80.08 394.45 71.53 387.62 80.08 394.45 80.08"/><polygon points="390.32 46.73 390.32 30.67 384.68 30.67 373.73 46.73 390.32 46.73"/><polygon points="328.07 80.08 343.4 80.08 328.07 69.29 328.07 80.08"/><polygon points="393.27 18.15 393.27 1.34 382.73 1.34 390.37 18.15 393.27 18.15"/><polygon points="352.45 47.28 352.45 46.73 365.54 46.73 357.51 30.67 352.45 30.67 352.45 23.07 337.98 38.45 352.45 47.28"/><polygon points="378.83 68.15 376.78 62.25 365.8 62.25 361.6 74.85 378.83 68.15"/><polygon points="357.09 18.15 390.37 18.15 382.73 1.34 373.54 1.34 350.16 10.94 357.09 18.15"/><polygon points="365.8 62.25 352.71 62.25 348.06 80.08 359.86 80.08 361.6 74.85 365.8 62.25"/><polygon points="361.6 74.85 359.86 80.08 382.98 80.08 378.83 68.15 361.6 74.85"/><polygon points="376.78 62.25 378.83 68.15 379.6 67.85 378.83 68.15 382.98 80.08 387.62 80.08 394.45 71.53 394.45 62.25 376.78 62.25"/><polygon points="352.45 62.25 352.45 56.7 328.07 63.3 328.07 69.29 343.4 80.08 348.06 80.08 352.71 62.25 352.45 62.25"/><polygon points="340.95 1.34 328.07 1.34 328.07 20.02 350.16 10.94 340.95 1.34"/><polygon points="373.54 1.34 340.95 1.34 350.16 10.94 373.54 1.34"/><polygon points="352.45 23.07 352.45 18.15 357.09 18.15 350.16 10.94 328.07 20.02 328.07 32.41 337.98 38.45 352.45 23.07"/><polygon points="352.45 47.28 337.98 38.45 337.6 38.85 337.98 38.45 328.07 32.41 328.07 63.3 352.45 56.7 352.45 47.28"/><polygon points="505.6 23.85 507.05 23.62 540.86 1.34 506.44 1.34 509.6 21.85 506.44 1.34 499.39 1.34 481.16 20.79 500.21 20.79 500.21 28.13 507.05 23.62 505.6 23.85"/><polygon points="477.06 1.34 486.6 14.85 477.06 1.34 475.4 1.34 475.4 20.79 481.16 20.79 499.39 1.34 477.06 1.34"/><polygon points="507.05 23.62 524.54 20.86 524.54 20.79 539.29 20.79 529.6 8.85 539.29 20.79 549.36 20.79 549.36 1.34 540.86 1.34 507.05 23.62"/><polygon points="500.21 28.13 500.21 32.77 524.54 39.81 524.54 20.86 507.05 23.62 500.21 28.13"/><polygon points="500.21 63.94 500.21 80.08 505.36 80.08 513.6 65.85 505.36 80.08 524.54 80.08 524.54 73.43 506.45 60.23 500.21 63.94"/><path d="M699.61,526.82l6.24,4.56,18.09-10.77V511l-24.33-7ZM703,505l15,19Z" transform="translate(-199.4 -471.15)"/><polygon points="500.21 55.68 500.21 63.94 506.45 60.23 500.21 55.68"/><polygon points="524.54 73.43 524.54 49.46 506.45 60.23 524.54 73.43"/><path d="M819.8,509.23a28.35,28.35,0,0,0-5.18-3.54L812,507l-23.87,11.94h0q9.78,2.14,12.46,4.56a7.25,7.25,0,0,1,2.69,5.48,6.67,6.67,0,0,1-.28,1.9l8.43,5.78Z" transform="translate(-199.4 -471.15)"/><path d="M803.05,530.89a7.92,7.92,0,0,1-2.54,3.77q-2.82,2.45-8,2.44c-4.28,0-7.63-1.36-10.1-4l-5.17,3.16,15.6,16.34a52.61,52.61,0,0,0,14.42-1.9l4.25-14Z" transform="translate(-199.4 -471.15)"/><path d="M777,536l.21.22,5.17-3.16c-.22-.24-.44-.48-.64-.74q-2.31-3-3.07-8.59l-23.15,1.45a30.6,30.6,0,0,0,8.36,19.22l13.33-8.18Z" transform="translate(-199.4 -471.15)"/><path d="M763.88,544.4c.14.14.26.3.4.44q7.74,7.73,27.82,7.73h.71l-15.6-16.34Z" transform="translate(-199.4 -471.15)"/><path d="M827,525.61A22.2,22.2,0,0,0,823.82,514a19.91,19.91,0,0,0-4-4.72l-8.32,27.44,8.84,6.06a25.36,25.36,0,0,0,2.45-3.16A25,25,0,0,0,827,525.61Z" transform="translate(-199.4 -471.15)"/><path d="M807.23,550.66a31.94,31.94,0,0,0,3.83-1.39,27,27,0,0,0,9.26-6.54l-8.84-6.06Z" transform="translate(-199.4 -471.15)"/><path d="M824.38,494.62c-.81-6.6-3-11.73-6.65-15.44l-3.64,16Z" transform="translate(-199.4 -471.15)"/><path d="M814,476.14c-5.24-3.31-12.57-5-22-5a60.44,60.44,0,0,0-14.65,1.53l6.06,9.42Z" transform="translate(-199.4 -471.15)"/><path d="M786,486.21a14.41,14.41,0,0,1,3.53-.4q5.16,0,8.09,2.42a8.91,8.91,0,0,1,1.28,1.32L806,478l-7.11,11.55a14.17,14.17,0,0,1,2.56,6.41l12.64-.74,3.64-16a20,20,0,0,0-2.77-2.42c-.31-.22-.66-.41-1-.62l-30.63,6Z" transform="translate(-199.4 -471.15)"/><path d="M812,507l2.62-1.31c-.28-.16-.55-.31-.85-.46q-6.9-3.53-22.85-7a33.27,33.27,0,0,1-6.49-1.89l-10.28,13.53Z" transform="translate(-199.4 -471.15)"/><path d="M773,510l1.15-.09,10.28-13.53a6.83,6.83,0,0,1-1.67-1A4.36,4.36,0,0,1,781,492a5.53,5.53,0,0,1,2.15-4.38,7.23,7.23,0,0,1,2.86-1.4l-2.64-4.11L760,486.65a19.89,19.89,0,0,0-1.47,7.54,19.24,19.24,0,0,0,6.87,15.2,29.33,29.33,0,0,0,6.15,4l2.65-3.48Z" transform="translate(-199.4 -471.15)"/><path d="M777.29,472.68a30.6,30.6,0,0,0-4.71,1.55A23.3,23.3,0,0,0,762,482.72a21.69,21.69,0,0,0-2,3.93l23.4-4.55Z" transform="translate(-199.4 -471.15)"/><path d="M774.15,509.91l-2.65,3.48a73.06,73.06,0,0,0,16.63,5.55L812,507Z" transform="translate(-199.4 -471.15)"/><polygon points="704.96 7.94 696.2 18.15 704.96 18.15 704.96 7.94"/><polygon points="654.71 46.83 658.67 49.6 664.14 30.47 664.14 24.37 651.1 29 654.71 46.83"/><polygon points="651.1 29 664.14 24.37 664.14 18.15 664.36 18.15 646.92 8.35 651.1 29"/><polygon points="658.6 49.85 658.67 49.6 654.71 46.83 659.1 68.57 664.14 60.7 664.14 53.43 658.67 49.6 658.6 49.85"/><polygon points="664.14 53.43 664.14 46.73 669.42 46.73 683.18 30.67 664.14 30.67 664.14 30.47 658.67 49.6 664.14 53.43"/><polygon points="645.51 1.34 646.92 8.35 664.36 18.15 667.41 18.15 669.81 1.34 645.51 1.34"/><polygon points="704.96 1.34 678.01 1.34 680.82 18.15 696.2 18.15 704.96 7.94 704.96 1.34"/><polygon points="669.81 1.34 667.41 18.15 680.82 18.15 678.01 1.34 669.81 1.34"/><polygon points="661.43 80.08 674.95 80.08 668.47 62.25 664.14 62.25 664.14 60.7 659.1 68.57 661.43 80.08"/><polygon points="651.73 80.08 661.43 80.08 659.1 68.57 651.73 80.08"/><polygon points="706.14 80.08 706.14 62.25 700.52 62.25 679.12 80.08 706.14 80.08"/><polygon points="679.12 80.08 700.52 62.25 668.47 62.25 674.95 80.08 679.12 80.08"/><polygon points="702 46.73 702 30.67 689.81 30.67 700.51 46.73 702 46.73"/><polygon points="700.51 46.73 689.81 30.67 683.18 30.67 669.42 46.73 700.51 46.73"/><polygon points="651.1 29 639.75 33.02 639.75 36.36 654.71 46.83 651.1 29"/><polygon points="654.71 46.83 639.75 36.36 639.75 54.05 655.6 73.85 639.75 54.05 639.75 80.08 651.73 80.08 659.1 68.57 654.71 46.83"/><polygon points="646.92 8.35 639.75 4.31 639.75 33.02 651.1 29 646.92 8.35"/><polygon points="645.51 1.34 639.75 1.34 639.75 4.31 646.92 8.35 645.51 1.34"/><polygon points="753.91 21.75 757.79 34.39 770.15 8.99 733.73 20.55 731.55 26.34 748.83 38.5 753.91 21.75"/><polygon points="748.83 38.5 731.55 26.34 721.89 52.03 746.59 45.86 748.83 38.5"/><polygon points="773.6 60.85 773.77 61.04 785.76 49.99 779.09 32.22 761.08 45.08 762.6 50.06 752.46 50.06 759.12 67.08 767.2 67.08 773.77 61.04 773.6 60.85"/><path d="M944.71,521.21,946,517l-24.7,6.18-4.13,11L926,551.23h9.58l3.84-13h19.1l-6.67-17ZM939,538l14-13Z" transform="translate(-199.4 -471.15)"/><polygon points="785.76 49.99 773.77 61.04 791 80.08 797.07 80.08 785.76 49.99"/><polygon points="767.2 67.08 767.65 67.08 771.59 80.08 791 80.08 773.77 61.04 767.2 67.08"/><polygon points="757.79 34.39 761.08 45.08 779.09 32.22 770.34 8.94 770.15 8.99 757.79 34.39"/><polygon points="740.94 1.34 736.21 13.94 751.5 1.34 740.94 1.34"/><polygon points="711.35 80.08 726.61 80.08 717.76 63.02 711.35 80.08"/><polygon points="770.27 8.75 767.48 1.34 751.5 1.34 736.21 13.94 733.73 20.55 770.15 8.99 770.27 8.75"/><polygon points="770.34 8.94 770.27 8.75 770.15 8.99 770.34 8.94"/>
-            </svg>
-          </div>
+            <div id="name_div">STEVE&nbsp&nbspTSEA</div>
 
-          <div id="typewriter_div">
-            <span id="typed"></span><span class="typed-cursor">|</span>
-          </div>
-
-          <div id="buttons_div">
-            <div class="button_div" title="website.github.io/files/Resume.pdf" onclick="window.open('files/Resume.pdf','_blank');" style="cursor: pointer;">
-                <div id="resume_icon" class="button_icon"></div>
+            <div id="typewriter_div">
+              <span id="typed"></span><span class="typed-cursor">|</span>
             </div>
 
-            <div class="space_divider"></div>
+            <div id="buttons_div">
+              <a href="files/Resume.pdf" target="_blank">
+                <div class="button_div">
+                  <img id="resume_icon" src="images/file_white.png">
+                </div>
+              </a>
 
-            <div class="button_div" title="https://github.com/stevetcm" onclick="window.open('https://github.com/stevetcm','_blank');" style="cursor: pointer;">
-                <div id="github_icon" class="button_icon"></div>
+              <div class="space_divider"></div>
+
+              <a href="https://github.com/stevetcm" target="_blank">
+                <div class="button_div">
+                  <img id="github_icon" src="images/github_white.png">
+                </div>
+              </a>
+
+              <div class="space_divider"></div>
+
+              <a href="mailto:steve_tcm@hotmail.com" target="_blank">
+                <div class="button_div">
+                  <img id="email_icon" src="images/email_white.png"></div>
+                </div>
+              </a>
             </div>
-
-            <div class="space_divider"></div>
-
-            <div class="button_div" title="mailto:steve_tcm@hotmail.com" onclick="location.href='mailto:steve_tcm@hotmail.com';" style="cursor: pointer;">
-                <div id="email_icon" class="button_icon"></div>
-            </div>
-          </div>
-        </div>
+          </div>  
+      
       </div>
+    </section>
 
-      <div id="section-aboutme" class="section-wrapper white">
+
+    <section>
+      <div id="section-aboutme" class="section-outer white">
 
         <div class="section-inner">
 
-          <div class="text-container">
+          <div class="title-container">
             <h1>ABOUT ME</h1>
           </div>
 
-          <div id="aboutme-container" class="left-container">            
-            <p>
-              &nbsp Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-            </p>
-             <p>
-               &nbsp Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-             </p>
-             <p>
-               &nbsp Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-             </p>
-             <p>
-               &nbsp Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-             </p>
-             <p>
-               &nbsp Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-             </p>
-          </div>
-
-          <div id="skill-container" class="right-container">
-            <p>
-              <div class="skills-switch"><div class="switch"></div></div>
-            <p>
-            <div class="brackets-element">
+          <div class="content-container">
+            <div id="aboutme-container" class="left-container">            
               <p>
-                <div class="bracket-top">
-                  <div class="brackets-arrow"></div>
-                  <span class="skills-category"> * </span>
-                   { <span class="brackets-hidden"> .. } </span>
-                </div>
-                <div class="brackets-bottom">
-                  <div class="brackets-content">
-                    <span class="skills-topic"> Name </span> : Steve Tsea Chin Ming; <br>
-                    <span class="skills-topic"> Email </span> : steve_tcm@hotmail.com;
-                  </div>
-                  }
-                </div>
+                &nbsp Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+              </p>
+              <p>
+                &nbsp Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+              </p>
+              <p>
+                &nbsp Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              </p>
+              <p>
+                &nbsp Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+              </p>
+              <p>
+                &nbsp Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
               </p>
             </div>
 
-            <div class="brackets-element">
+            <div id="skill-container" class="right-container">
               <p>
-                <div class="bracket-top">
-                  <div class="brackets-arrow"></div>
-                  <span class="skills-category"> Skills </span>
-                  { <span class="brackets-hidden"> .. } </span>
-                </div>
-                <div class="brackets-bottom">
-                  <div class="brackets-content">
-                    <span class="skills-topic"> Frontend </span> : HTML, CSS, Javascript/jQuery; <br>
-                    <span class="skills-topic"> Languages </span> : Java Android, C/C++, Python, SQL; <br>
-                    <span class="skills-topic"> Operating Systems </span>: Windows and Linux; <br>
-                    <span class="skills-topic"> Bilingual </span> : English and French;
-                  </div>
-                  }
-                </div>
+                <div class="skills-switch"><div class="switch"></div></div>
               </p>
-            </div>
+              <div class="brackets-element">
+                <p>
+                  <div class="bracket-top">
+                    <div class="brackets-arrow"></div>
+                    <span class="skills-category"> * </span>
+                     { <span class="brackets-hidden"> .. } </span>
+                  </div>
+                  <div class="brackets-bottom">
+                    <div class="brackets-content">
+                      <span class="skills-topic"> Name </span> : Steve Tsea Chin Ming; <br>
+                      <span class="skills-topic"> Email </span> : steve_tcm@hotmail.com;
+                    </div>
+                    }
+                  </div>
+                </p>
+              </div>
 
-            <div class="brackets-element">
-              <p>
-                <div class="bracket-top">
-                  <div class="brackets-arrow"></div>
-                  <span class="skills-category"> Education </span>
-                  { <span class="brackets-hidden"> .. } </span>
-                </div>
-                <div class="brackets-bottom">
-                  <div class="brackets-content">
-                    <span class="skills-topic"> Major </span> : Honours Computer Science; <br>
-                    <span class="skills-topic"> Institution </span> : University of Waterloo, Ontario, Canada; <br>
-                    <span class="skills-topic"> Duration </span> : September 2013 - April 2017;
+              <div class="brackets-element">
+                <p>
+                  <div class="bracket-top">
+                    <div class="brackets-arrow"></div>
+                    <span class="skills-category"> Skills </span>
+                    { <span class="brackets-hidden"> .. } </span>
                   </div>
-                  }
-                </div>
-              </p>
+                  <div class="brackets-bottom">
+                    <div class="brackets-content">
+                      <span class="skills-topic"> Frontend </span> : HTML, CSS, Javascript/jQuery; <br>
+                      <span class="skills-topic"> Languages </span> : Java Android, C/C++, Python, SQL; <br>
+                      <span class="skills-topic"> Operating Systems </span>: Windows and Linux; <br>
+                      <span class="skills-topic"> Bilingual </span> : English and French;
+                    </div>
+                    }
+                  </div>
+                </p>
+              </div>
+
+              <div class="brackets-element">
+                <p>
+                  <div class="bracket-top">
+                    <div class="brackets-arrow"></div>
+                    <span class="skills-category"> Education </span>
+                    { <span class="brackets-hidden"> .. } </span>
+                  </div>
+                  <div class="brackets-bottom">
+                    <div class="brackets-content">
+                      <span class="skills-topic"> Major </span> : Honours Computer Science; <br>
+                      <span class="skills-topic"> Institution </span> : University of Waterloo, Ontario, Canada; <br>
+                      <span class="skills-topic"> Duration </span> : September 2013 - April 2017;
+                    </div>
+                    }
+                  </div>
+                </p>
+              </div>
             </div>
 
           </div>
         </div>
-
-      </div>
-
-    </section>
-
-
-    <section id="section-projects" class="section-wrapper black">
-      <div class="section-inner">
-
-        <div class="text-container">
-          <h1>PROJECTS</h1>
-        </div>
-
-        <div id="projects-container">            
-          <div id="project-impulse" class="project-item">
-            <img src="images/feature_graphic_impulse.png">
-            
-            <button class="gplay_btn" onclick="window.open('https://play.google.com/store/apps/details?id=com.orangemuffin.impulse','_blank');" style="cursor: pointer;"><img src="images/google_play.png">Google Play</button>
-          </div>
-
-          <div id="project-tvnext" class="project-item">
-            <img src="images/feature_graphic_tvnext.png">
-            
-            <button class="gplay_btn" onclick="window.open('https://play.google.com/store/apps/details?id=com.orangemuffin.tvnext','_blank');" style="cursor: pointer;"><img src="images/google_play.png">Google Play</button>
-            
-            <button class="git_btn" onclick="window.open('https://github.com/stevetcm/tvnext','_blank');" style="cursor: pointer;"><img src="images/github_white.png">Github</button>
-          </div>
-
-          <div id="project-quickremind" class="project-item">
-            <img src="images/feature_graphic_quickremind.png">
-            
-            <button class="gplay_btn" onclick="window.open('https://play.google.com/store/apps/details?id=com.orangemuffin.quickremind','_blank');" style="cursor: pointer;"><img src="images/google_play.png">Google Play</button>
-            
-            <button class="git_btn" onclick="window.open('https://github.com/stevetcm/quickremind','_blank');" style="cursor: pointer;"><img src="images/github_white.png">Github</button>
-          </div>
-
-          <div id="project-twoworlds" class="project-item">
-            <img src="images/feature_graphic_twoworlds.png">
-
-            <button class="gplay_btn" onclick="window.open('https://play.google.com/store/apps/details?id=com.development.orangemuffin.twoworlds.android','_blank');" style="cursor: pointer;"><img src="images/google_play.png">Google Play</button>
-            
-            <button class="git_btn" onclick="window.open('https://github.com/stevetcm/withintwoworlds','_blank');" style="cursor: pointer;"><img src="images/github_white.png">Github</button>
-          </div>
-        </div>
-        
       </div>
     </section>
+
+
+    <section>
+      <div id="section-projects" class="section-outer black">
+
+        <div class="section-inner">
+
+          <div class="title-container">
+            <h1>PROJECTS</h1>
+          </div>
+
+          <div class="content-container">
+
+            <div id="notice-projects">
+              HOVER OVER EACH PROJECT IMAGE TO SEE MORE DETAILS ABOUT IT
+            </div>
+
+            <div id="projects-container">
+              <div id="project-impulse" class="project-item">
+                <div class="project-overlay"></div>
+                <img class="project-image" src="images/feature_graphic_impulse.png">
+                <div class="project-details">
+                  <div class="project-title">IMPULSE</div>
+                  <div class="project-content">
+                    An Android Twitch.tv management app
+                  </div>
+                  <div class="project-buttons">
+                    <a href="https://play.google.com/store/apps/details?id=com.orangemuffin.impulse" target="_blank">
+                      <div class=project-button-div>
+                        <img src="images/google_play.png">
+                        Google Play
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div id="project-tvnext" class="project-item">
+                <div class="project-overlay"></div>
+                <img class="project-image" src="images/feature_graphic_tvnext.png">
+                <div class="project-details fadeIn-top">
+                  <div class="project-title">TV NEXT</div>
+                  <div class="project-content">
+                    An Android app to help you keep track of your favorite TV series                  
+                  </div>
+                  <div class="project-buttons">
+                    <a href="https://play.google.com/store/apps/details?id=com.orangemuffin.tvnext" target="_blank">
+                      <div class=project-button-div>
+                        <img src="images/google_play.png">
+                        Google Play
+                      </div>
+                    </a>
+                    <div class="project-button-space-divider"></div>
+                    <a href="https://github.com/stevetcm/tvnext" target="_blank">
+                      <div class=project-button-div>
+                        <img src="images/github_white.png">
+                        Github
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div id="project-quickremind" class="project-item">
+                <div class="project-overlay"></div>
+                <img class="project-image" src="images/feature_graphic_quickremind.png">
+                <div class="project-details fadeIn-top">
+                  <div class="project-title">QUICK REMIND</div>
+                  <div class="project-content">
+                    An Android app to create reminders and notify you when it's time
+                  </div>
+                  <div class="project-buttons">
+                    <a href="https://play.google.com/store/apps/details?id=com.orangemuffin.quickremind" target="_blank">
+                      <div class=project-button-div>
+                        <img src="images/google_play.png">
+                        Google Play
+                      </div>
+                    </a>
+                    <div class="project-button-space-divider"></div>
+                    <a href="https://github.com/stevetcm/quickremind" target="_blank">
+                      <div class=project-button-div>
+                        <img src="images/github_white.png">
+                        Github
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div id="project-twoworlds" class="project-item">
+                <div class="project-overlay"></div>
+                <img class="project-image" src="images/feature_graphic_twoworlds.png">
+                <div class="project-details fadeIn-top">
+                  <div class="project-title">WITHIN TWO WORLDS</div>
+                  <div class="project-content">
+                    A minimalist platformer game about a little box with the ability to move between the light and the dark world. 
+                  </div>
+                  <div class="project-buttons">
+                    <a href="https://play.google.com/store/apps/details?id=com.development.orangemuffin.twoworlds.android" target="_blank">
+                      <div class=project-button-div>
+                        <img src="images/google_play.png">
+                        Google Play
+                      </div>
+                    </a>
+                    <div class="project-button-space-divider"></div>
+                    <a href="https://github.com/stevetcm/withintwoworlds" target="_blank">
+                      <div class=project-button-div>
+                        <img src="images/github_white.png">
+                        Github
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TimelineMax.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
 
     <script src="js/script.js"></script>
   </body>
-
 </html>
