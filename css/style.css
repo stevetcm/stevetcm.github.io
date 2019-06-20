@@ -1,43 +1,198 @@
 /* Global
 ---------------------------------*/
+:root {
+	--name-size: 55px;
+
+	--typewriter-size: 20px;
+
+	--project-title-size: 15px;
+	--project-content-size: 14px;
+
+	--project-line-height-size: 175%;
+
+	--margin-one: 25px;
+	--margin-two: 35px;
+	--margin-divider: 50px;
+
+	--button-size: 60px;
+	--button-offset: 20px;
+	--button-github-offset: 8px;
+	--button-line-offset: -6px;
+	--button-full-offset: calc((var(--button-line-offset) * 2) * -1);
+	--button-rotation: 45deg;
+	--anim-time: 7s;
+	--line-width: 1px;
+	--clip-size: calc(var(--button-size) + var(--button-full-offset));
+	--path-size: calc(var(--clip-size) - var(--line-width));
+
+	--section-inner-size: 70%;
+
+	--color-white: #ffffff;
+	--color-black: #000000;
+
+	--white-tint: #eff1f5;
+	--black-tint: #202020;
+}
+
 body {
-	font-size: 15px !important;
+	font-size: 15px;
 	font-family: 'Oxygen Mono', monospace;
 	line-height: 175%;
 }
 h1 {
-	font-size: 2.2em;
+	font-size: 33px;
 	margin: 0;	
 	margin-bottom: 20px;
 }
-
+a {
+	text-decoration: none;
+}
 
 .black {
-	background-color: #202020;
+	background-color: var(--black-tint);
+	color: var(--color-white);
 }
 .black p,
 .black h1 {
-	color: #ffffff;
+	color: var(--color-white);
 }
 .white {
-	background-color: #eff1f5;
+	background-color: var(--white-tint);
 }
 .white p, 
 .white h1 {
-	color: #202020;
+	color: var(--black-tint);
 }
 
-.section-wrapper {
-	display:inline-block;
+.section-outer {
+	display: flex;
+	justify-content: center;
+}
+.section-inner {
+	width: var(--section-inner-size);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 	padding-top: 50px;
 	padding-bottom: 50px;
-	margin-bottom: -3px;
-	position: relative;
-	width: 100%;
 }
-.section-inner{
-	margin: 0 auto;
-	width: 70%;
+
+.title-container {
+	display: flex;
+	justify-content: center;
+}
+
+.left-container {
+	width: 48%;
+	float: left;
+}
+.right-container {
+	width: 48%;
+	float: right;
+}
+
+
+/* Introduction Section
+---------------------------------*/
+#section-intro {
+	height: 100vh;
+	width: 100%;
+	position: relative;
+}
+#canvas-particle, #intro-element {
+	position: absolute;
+	display: block;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+#intro-element {
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items:center;
+	justify-content: center;
+	text-align: center;
+	z-index: 100;
+}
+#name_div {
+	font-family: 'Bungee', monospace;
+	font-size: var(--name-size);
+}
+#typewriter_div {
+	font-family: 'Bungee Hairline', monospace;
+	width: 95%;
+	font-size: var(--typewriter-size);
+	color: var(--color-white);
+	margin-top: var(--margin-one);
+}
+#buttons_div {
+	display: flex;
+	margin-top: var(--margin-two);
+	align-items: center;
+	justify-content: center;
+}
+
+.button_div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+ 	width: var(--button-size);
+  	height: var(--button-size);
+  	box-shadow: inset 0 0 0 var(--line-width) rgba(255, 255, 255, 0.5);
+  	transform: rotate(calc(var(--button-rotation) * -1));
+  	transition: 0.3s;
+  	background: var(--black-tint);
+}
+.button_div::before,
+.button_div::after {
+	content: '';
+	position: absolute;
+	top: 0; left: 0; bottom: 0; right: 0;
+	margin: var(--button-line-offset);
+  	box-shadow: inset 0 0 0 var(--line-width) rgba(255, 255, 255, 1);
+  	animation: clipMe var(--anim-time) cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+}
+.button_div::before {
+	animation-delay: calc((var(--anim-time) * -1) / 2);
+}
+.button_div:hover {
+	background-color: var(--color-black);
+}
+
+@keyframes clipMe {
+  	0%, 100% {clip: rect(0px, var(--clip-size), var(--line-width), 0px);}
+  	25% {clip: rect(0px, var(--line-width), var(--clip-size), 0px);}
+  	50% {clip: rect(var(--path-size), var(--clip-size), var(--clip-size), 0px);}
+  	75% {clip: rect(0px, var(--clip-size), var(--clip-size), var(--path-size));}
+}
+
+.space_divider {
+	width: var(--margin-divider);
+}
+
+#resume_icon {
+	width: calc(var(--button-size) - var(--button-offset));
+	height: calc(var(--button-size) - var(--button-offset));
+  	transform: rotate(var(--button-rotation));
+}
+#github_icon {
+	width: calc(var(--button-size) - var(--button-offset) + var(--button-github-offset));
+	height: calc(var(--button-size) - var(--button-offset) + var(--button-github-offset));
+  	transform: rotate(var(--button-rotation));
+}
+#email_icon {
+	width: calc(var(--button-size) - var(--button-offset));
+	height: calc(var(--button-size) - var(--button-offset));
+  	transform: rotate(var(--button-rotation));
+}
+
+
+/* About Me Section
+---------------------------------*/
+#aboutme-container {
+	text-align: justify;
 }
 
 .skills-category {
@@ -47,151 +202,18 @@ h1 {
 	color: #c55000;
 }
 
-
-/* Introduction
----------------------------------*/
-#section-intro {
-	height: 100vh;
-}
-
-
-#intro-element {
-  	height: 100%;
-  	width: 100%;
-  	text-align: center;
-}
-
-
-#name_div {
-	position: relative;
-	top: 35%;
-	margin: 0 auto;
-	width: 100%;
-}
-#name_div svg {
-  	width: 515px;
-  	background-image: url('../images/name_outline_white.png');
-  	background-size: cover;
-  	fill: #FFFFFF;
-}
-
-#typewriter_div {
-	position: relative;
-	top: 38%;
-	margin: 0 auto;
-	color: #ffffff;
-	font-size: 20px;
-}
-#typed-cursor {
-	color: #ffffff;
-}
-
-#buttons_div{
-	position: relative;
-	top: 43%;
-	margin: 0 auto;
-	display: table;
-}
-.button_div {
-	display: table-cell;
-    vertical-align: middle;
- 	width: 60px;
-  	height: 60px;
-  	box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.5);
-  	transform: rotate(-45deg);
-}
-.button_div::before,
-.button_div::after {
-	content: '';
-	position: absolute;
-	top: 0; left: 0; bottom: 0; right: 0;
-	margin: -6px;
-  	box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 1);
-  	animation: clipMe 7s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
-}
-.button_div::before {
-	animation-delay: -3.5s;
-}
-.button_div:hover {
-	background-color: #000000;
-}
-
-@keyframes clipMe {
-  	0%, 100% {clip: rect(0px, 72px, 1px, 0px);}
-  	25% {clip: rect(0px, 1px, 72px, 0px);}
-  	50% {clip: rect(71px, 72px, 72px, 0px);}
-  	75% {clip: rect(0px, 72px, 72px, 71px);}
-}
-
-.space_divider {
-	width: 60px;
-}
-
-#resume_icon {
-	width: 39px;
-	height: 39px;
-	margin-left: 11px;
-	background-image: url('../images/file_white.png');
-  	background-size: contain;
-  	transform: rotate(45deg);
-}
-#github_icon {
-	width: 47px;
-	height: 47px;
-	margin-left: 7px;
-	background-image: url('../images/github_white.png');
-  	background-size: contain;
-  	transform: rotate(45deg);
-}
-#email_icon {
-	width: 39px;
-	height: 39px;
-	margin-left: 11px;
-	background-image: url('../images/email_white.png');
-  	background-size: contain;
-  	transform: rotate(45deg);
-}
-
-
-/* About Me
----------------------------------*/
-#section-aboutme {
-	z-index: 100;
-}
-
-
-.text-container {
-	margin: 0 auto;
-	text-align: center;
-}
-
-#aboutme-container {
-	text-align: justify;
-}
-
-
-.left-container {
-	width: 48%;
-	float: left;
-	display: inline-block;
-}
-
-.right-container {
-	float: right;
-	width: 48%;
-	display: inline-block;
-}
 .brackets-content {
 	margin-left: 30px;
 }
 .brackets-bottom {
 	margin-left: 15px;
 }
+
 .brackets-arrow {
 	display: inline-block;
   	width: 0;
   	height: 0;
-  	border-top: 5px solid #202020;
+  	border-top: 5px solid var(--black-tint);
   	border-right: 5px solid transparent;
   	border-left: 5px solid transparent;
   	transition: all 0.5s;
@@ -209,17 +231,16 @@ h1 {
 	width: 16px;
 	height: 10px;
 	border-radius: 10px;
-	background-color: #000000;
+	background-color: var(--color-black);
   	cursor: pointer;
 }
 .switch {
 	display: block;
   	position: relative;
-  	content: '';
   	width: 8px; height: 8px;
   	top: 1px; left: 1px;
   	border-radius: 4px;
-  	background: #fff;
+  	background: var(--color-white);
   	transition: all 0.3s;
 }
 .switch.clicked {
@@ -227,67 +248,92 @@ h1 {
 }
 
 
-/* Projects
+/* Projects Section
 ---------------------------------*/
-#section-projects {
-	z-index: 100;
-}
-
 #projects-container {
+	display: grid;
+	grid-template-columns: auto auto auto;
+	line-height: 0%;
+}
+#notice-projects {
+	display: flex;
 	width: 100%;
-  	display: grid;
-  	grid-template-columns: auto auto auto;
-  	margin: auto;
-  	text-align: center;
+	justify-content: center;
+	text-align: center;
+	font-family: 'Bungee Hairline', monospace;
+	font-size: 17px;
 }
 
 .project-item {
-  margin: 15px 10px 0px 10px;
-}
-
-.project-item img {
-	width: 100%;
-}
-
-.project-item .gplay_btn {
-	background: #202020;
-	color: #ffffff;
-	border: solid 2px;
-	border-radius: 4px;
-}
-.project-item .gplay_btn:hover {
-	background: #000000;
-}
-
-.project-item .gplay_btn img {
-    	width: 15px;
-    	height: 15px;
-
 	position: relative;
-  	transform: translateY(12%);
-
-  	padding-right: 4px;
+	margin: 5px;
+}
+.project-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.95);
+	opacity: 0;
+	z-index: 200;
+	transition: all 0.3s ease-in-out 0s;
+}
+.project-details {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 100%;
+	line-height: 150%;
+	transform: translate(-50%, -50%);
+	z-index: 201;
+	text-align: center;
+	opacity: 0;
+  	transition: all 0.3s ease-in-out 0s;
+}
+.project-item:hover .project-overlay {
+  opacity: 1;
+}
+.project-item:hover .project-details {
+  top: 50%;
+  left: 50%;
+  opacity: 1;
 }
 
-.project-item .git_btn {
-	background: #202020;
+.project-image {
+	width: 100%;
+	z-index: 199;
+}
+.project-title {
+	font-weight: 700;
+	font-size: var(--project-title-size);
+}
+.project-content {
+	font-size: var(--project-content-size);
+	margin-left: 10px;
+	margin-right: 10px;
+}
+.project-buttons {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin: 5px;
+}
+.project-button-div {
+	display: inline-block;
 	color: #ffffff;
 	border: solid 2px;
 	border-radius: 4px;
+	padding: 2px 6px 2px 1px;
 }
-.project-item .git_btn:hover {
-	background: #000000;
-}
-
-.project-item .git_btn img {
+.project-button-div img {
 	width: 15px;
 	height: 15px;
-
-	position: relative;
-  	transform: translateY(11%);
-
-  	padding-right: 4px;
-}	
+  	transform: translate(30%, 13%);
+}
+.project-button-space-divider {
+	width: 10px;
+}
 
 
 /* Responsive Media Queries
@@ -295,106 +341,77 @@ h1 {
 @media only screen and (max-width : 1329px) {
 	#projects-container {
 		grid-template-columns: auto auto;
-    	}
+    }
 }
-
-@media only screen and (max-width : 812px) {
-	.section-inner {
-		width: 80%;
+@media only screen and (max-width: 812px) {
+	:root {
+		--section-inner-size: 80%;
 	}
-	#name_div svg {
-  		width: 73vw;
-  	}
-  	#name_div {
-		top: calc(40.5vh - 5vw);
-	}
-  	#typewriter_div {
-  		top: 38vh;
-		font-size: 2.9vw;
-	}	
-	#buttons_div{
-		top: calc(38vh + 4vw);
-	}
-	.space_divider {
-		width: 8vw;
-	}
-	#aboutme-container {
-        	width: 100%;
-        	display: block;
-    	}
-
-    	#skill-container {
+	.left-container{
 		width: 100%;
-		display: block;
+	}
+	.right-container {
+		width: 100%;
 		float: left;
-    	}
-
-    	#projects-container {
+	}
+	#projects-container {
 		grid-template-columns: auto;
-  		margin-bottom: 0;
-    	}
-    	.project-item {
-  		margin: 15px 0px 0px 0px;
-	}
-
-    	.button_div {
-	 	width: 8vw;
-	  	height: 8vw;
-	}
-	.button_div::before,
-	.button_div::after {
-		margin: -4px;
-	}
-    	@keyframes clipMe {
-  		0%, 100% {clip: rect(0px, calc(8.1vw + 8px), 1px, 0px);}
-  		25% {clip: rect(0px, 1px, calc(8.1vw + 8px), 0px);}
-  		50% {clip: rect(calc(8.1vw + 7px), calc(8.1vw + 8px), calc(8.1vw + 8px), 0px);}
-  		75% {clip: rect(0px, calc(8.1vw + 8px), calc(8.1vw + 8px), calc(8.1vw + 7px));}
-	}
-	#resume_icon {
-		width: 5.2vw;
-		height: 5.2vw;
-		margin-left: 1.4vw;
-	}
-	#github_icon {
-		width: 6.5vw;
-		height: 6.5vw;
-		margin-left: 0.8vw;
-	}
-	#email_icon {
-		width: 5.2vw;
-		height: 5.2vw;
-		margin-left: 1.4vw;
 	}
 }
-@media only screen and (max-width : 360px) {
-	.button_div {
-	 	width: 30px;
-	  	height: 30px;
+@media only screen and (max-width: 600px) {
+	:root {
+		--name-size: 35px;
+
+		--typewriter-size: 16px;
+
+		--margin-one: 15px;	
+		--margin-two: 25px;
+
+		--margin-divider: 40px;
+		
+		--button-size: 46px;
+		--button-offset: 16px;
+		--button-line-offset: -5px;
+		--button-github-offset: 7px;
 	}
-	.button_div::before,
-	.button_div::after {
-		margin: -3px;
+}
+@media only screen and (max-width: 485px) {
+	:root {
+		--name-size: 25px;
+
+		--typewriter-size: 12px;
+
+		--project-title-size: 14px;
+		--project-content-size: 13px;
+
+		--margin-one: 10px;	
+		--margin-two: 20px;
+
+		--margin-divider: 26px;
+		
+		--button-size: 34px;
+		--button-offset: 12px;
+		--button-line-offset: -3px;
+		--button-github-offset: 6px;
 	}
-    	@keyframes clipMe {
-  		0%, 100% {clip: rect(0px, 36px, 1px, 0px);}
-  		25% {clip: rect(0px, 1px, 36px, 0px);}
-  		50% {clip: rect(35px, 36px, 36px, 0px);}
-  		75% {clip: rect(0px, 36px, 36px, 35px);}
-	}
-	#resume_icon {
-		width: 20px;
-		height: 20px;
-		margin-left: 5px;
-	}
-	#github_icon {
-		width: 24px;
-		height: 24px;
-		margin-left: 3px;
-	}
-	#email_icon {
-		width: 20px;
-		height: 20px;
-		margin-left: 5px;
+}
+@media only screen and (max-width: 345px) {
+	:root {
+		--name-size: 27px;
+
+		--typewriter-size: 10px;
+
+		--project-title-size: 13px;
+		--project-content-size: 12px;
+
+		--margin-one: 7px;	
+		--margin-two: 12px;
+
+		--margin-divider: 20px;
+		
+		--button-size: 30px;
+		--button-offset: 10px;
+		--button-line-offset: -2px;
+		--button-github-offset: 4px;
 	}
 }
