@@ -7,6 +7,8 @@
 
 	--project-title-size: 15px;
 	--project-content-size: 14px;
+	
+	--notice-project-size: 17px;
 
 	--project-line-height-size: 150%;
 	
@@ -265,7 +267,7 @@ a {
 	justify-content: center;
 	text-align: center;
 	font-family: 'Bungee Hairline', monospace;
-	font-size: 17px;
+	font-size: var(--notice-project-size);
 }
 
 .project-item {
@@ -388,6 +390,8 @@ a {
 
 		--project-title-size: 13px;
 		--project-content-size: 12px;
+		
+		--notice-project-size: 15px;
 		
 		--project-line-height-size: 120%;
 
