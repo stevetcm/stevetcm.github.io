@@ -67,9 +67,7 @@ function resizeReset() {
   w = canvasBody.width = $('body').innerWidth();
 
   if (w < 600) {
-    opts.particleAmount = 10; 
-    opts.linkRadius = 200;
-    opts.defaultSpeed = 1.5;
+    opts.particleAmount = 5;
   }
 
   h = canvasBody.height = window.innerHeight;
