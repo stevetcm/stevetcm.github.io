@@ -148,7 +148,7 @@ function setup() {
   resizeReset();
 
   particles = [];
-  for (let i = 0; i < opts.particleAmount; i++){
+  for (let i = 0; i < opts.particleAmount; i++) {
     particles.push(new Particle());
   }
 
@@ -159,19 +159,19 @@ function loop() {
   window.requestAnimationFrame(loop);
   drawArea.clearRect(0, 0, w, h);
 
-  for (let i = 0; i < particles.length; i++){
+  for (let i = 0; i < particles.length; i++) {
     particles[i].update();
     particles[i].draw();
   }
   
-  for (let i = 0; i < particles.length; i++){
+  for (let i = 0; i < particles.length; i++) {
     linkPoints(particles[i], particles);
   }
 }
 
 const canvasBody = document.getElementById("canvas-particles"),
 drawArea = canvasBody.getContext("2d");
-let delay = 200, tid,
+let delay = 500, tid,
 rgb = opts.lineColor.match(/\d+/g);
 resizeReset();
 setup();
