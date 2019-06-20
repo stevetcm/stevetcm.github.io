@@ -321,7 +321,8 @@ a {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
-	margin: 5px;
+	margin: var(--project-buttons-margin);
+	font-size: var(--project-content-size);
 }
 .project-button-div {
 	display: inline-block;
