@@ -67,7 +67,9 @@ function resizeReset() {
   w = canvasBody.width = $('body').innerWidth();
 
   if (w < 600) {
-    opts.particleAmount = 5;
+    opts.particleAmount = 10;
+    opts.defaultSpeed = 1.5;
+    opts.linkRadius = 200;
   }
 
   h = canvasBody.height = window.innerHeight;
@@ -169,9 +171,25 @@ function loop() {
   }
 }
 
+//check if on mobile devices
+var isMobile = false;
+if (navigator.userAgent.match(/Android/i)
+    || navigator.userAgent.match(/webOS/i)
+    || navigator.userAgent.match(/iPhone/i)
+    || navigator.userAgent.match(/iPad/i)
+    || navigator.userAgent.match(/iPod/i)
+    || navigator.userAgent.match(/BlackBerry/i)
+    || navigator.userAgent.match(/Mobi/i)) {
+  isMobile = true;
+}
+
 const canvasBody = document.getElementById("canvas-particles"),
 drawArea = canvasBody.getContext("2d");
 let delay = 500, tid,
 rgb = opts.lineColor.match(/\d+/g);
-resizeReset();
-setup();
+
+//disable point link animation on mobile devices
+if (!isMobile) {
+  resizeReset();
+  setup();
+}
